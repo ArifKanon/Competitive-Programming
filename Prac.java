@@ -61,6 +61,8 @@ public class Prac {
 		//  hm2.containsKey(1); // Returns True if the key is present in Map else return False
 		//  hm2.containsValue("Arif"); // Returns True if the value is present in Map else return False
 		//  hm2.equals(hm3); // Returns True if both maps are equal else return False
+
+		//Just a comment
 	  
 	}
 }
