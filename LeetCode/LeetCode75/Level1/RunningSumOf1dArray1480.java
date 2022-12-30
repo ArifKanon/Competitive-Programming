@@ -1,3 +1,4 @@
+package leetcode.leetcode75.level1;
 public class RunningSumOf1dArray1480 {
 	// 1480. Running Sum of 1d Array
 

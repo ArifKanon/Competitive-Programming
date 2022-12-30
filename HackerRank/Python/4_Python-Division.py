@@ -1,6 +1,0 @@
-nu1 = input()
-nu2 = input()
-a = int(nu1)
-b = int(nu2)
-print(a // b)
-print(a / b)

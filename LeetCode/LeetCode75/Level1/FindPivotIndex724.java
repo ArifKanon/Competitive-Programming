@@ -1,3 +1,4 @@
+package leetcode.leetcode75.level1;
 public class FindPivotIndex724 {
 
 	public static int pivotIndex(int[] nums) {
