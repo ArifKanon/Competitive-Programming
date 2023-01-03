@@ -1,4 +1,4 @@
-public class FindPivotIndex724 {
+public class FindPivotIndex_724 {
 
 	public static int pivotIndex(int[] nums) {
 		//==== LeetCode Approach
