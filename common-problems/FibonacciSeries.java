@@ -4,9 +4,6 @@
 
 import java.util.*;
 
-import javax.print.event.PrintEvent;
-import javax.sound.sampled.SourceDataLine;
-
 
 public class FibonacciSeries {
 
@@ -27,7 +24,7 @@ public class FibonacciSeries {
                             {7, 8, 9}
                         };
 
-        for (int i=0; i<)
+        // for (int i=0; i<)
 
         System.out.println("Length: " + twoD.length + " next: " + twoD[0].length);
 
