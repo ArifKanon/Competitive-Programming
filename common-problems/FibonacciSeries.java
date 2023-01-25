@@ -1,100 +1,35 @@
-/**
-  Write a simple Java program which will print Fibonacci series, e.g. 1 1 2 3 5 8 13 ... . up to a given number. We prepare for cross questions like using iteration over recursion and how to optimize the solution using caching and memoization.
- */
-
-import java.util.*;
-
 
 public class FibonacciSeries {
 
-    private static int fibArr[];
+    // Recursion 1 without using loop
+    public static void fibonacci(int num1, int num2, int seq) {
+        if (num1 == 0)
+            System.out.print(num1 + " " + num2 + " ");
 
-    public static int[] addNumber(int limit) {
-        int arr[];
+        int sum = num1 + num2;
+        System.out.print(sum + " ");
 
-        arr = new int[] {0, 1};
-
-        return arr;
+        if (seq > 3)
+            fibonacci(num2, sum, --seq);
     }
 
-    public static void main(String[] args) 
-    {
-        int[][] twoD = {
-                            {1, 2, 3, 4},
-                            {7, 8, 9}
-                        };
-
-        // for (int i=0; i<)
-
-        System.out.println("Length: " + twoD.length + " next: " + twoD[0].length);
-
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter limit of fibonacci: ");
-        
-        int numberLimit = 0;
-        
-        try {
-            numberLimit = Integer.parseInt(input.nextLine());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        fibArr = new int[numberLimit];
-        input.close();
-
-        addNumber(numberLimit);
-        
-        System.out.println("Limit of Fibonacci number is: ");
-        for (int i : fibArr) {
-            System.out.println(i);
-        }
+    // Recursion 2 using loop
+    public static int fibonacciSequence(int count) {
+        if (count <= 1)
+            return count;
+        return fibonacciSequence(count - 1) + fibonacciSequence(count - 2);
     }
+
+    // Main method
+    public static void main(String[] args) {
+        int seq = 20;
+        // Recursion 1
+        fibonacci(0, 1, seq);
+
+        System.out.println();
+        // Recursion 2 using loop
+        for (int i = 0; i < seq; i++)
+            System.out.print(fibonacciSequence(i) + " ");
+    }
+
 }
-
-
-
-// public class FibonacciSeries {
-    
-//     private static int[] fibArr;
-//     private static int key = 1;
-
-//     private static void addNumber(int limit) {
-//         int res = fibArr[key] + fibArr[key-1];
-
-//         if (res < limit)
-//         {
-//             key++;
-//             fibArr[key] = res;
-
-//             addNumber(limit);
-//         }
-        
-//     }
-
-
-//     public static void main(String[] args) {
-//         Scanner input = new Scanner(System.in);
-
-//         int limit = 0;
-
-//         try {
-//             limit = Integer.parseInt(input.nextLine());
-//         } catch (Exception e) {
-//             e.printStackTrace();
-//         }
-
-//         input.close();
-
-//         fibArr = new int[limit];
-//         fibArr[0] = 0;
-//         fibArr[1] = 1;
-
-//         addNumber(limit);
-
-//         System.out.println(fibArr.length);
-
-//         for (int i=0; i<key+1; i++) {
-//             System.out.print(fibArr[i] + " ");
-//         }
-//     }
-// }
