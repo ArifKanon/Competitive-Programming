@@ -2,31 +2,38 @@ import java.util.*;
 
 public class PalindromeCheck {
 
-    public static String checkPalindrome(String str)
-    {
-        if (str == null || str.isEmpty()) {
-            return str;
+    public static boolean checkPalindrome(String str) {
+        int length = str.length();
+        for (int i = 0; i < length / 2; i++) {
+            if (str.charAt(i) != str.charAt(length - 1 - i))
+                return false;
         }
-
-        return str.charAt(str.length()-1) + checkPalindrome(str.substring(0, str.length()-1));
+        return true;
     }
 
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+    public static String checkPalindromeByRecursion(String str) {
+        if (str == null || str.isEmpty())
+            return str;
 
+        int length = str.length();
+        return str.charAt(length - 1) + checkPalindromeByRecursion(str.substring(0, length - 1));
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        // Input a string
+        Scanner input = new Scanner(System.in);
         System.out.print("Enter your input: ");
         String text = input.nextLine();
-
         input.close();
 
-        String res = checkPalindrome(text);
+        System.out.println("Is palindrome: " + checkPalindrome(text));
 
-        System.out.println(res);
-
-        if (text.equals(res)) {
-            System.out.println("Palindorme");
-        } else {
-            System.out.println("Not Palindrome");
-        }
+        String reverseStr = checkPalindromeByRecursion(text);
+        if (text.equals(reverseStr))
+            System.out.println("The string is palindrome (Reverse)");
+        else
+            System.out.println("The string is not palindrome (Reverse)");
     }
+
 }
